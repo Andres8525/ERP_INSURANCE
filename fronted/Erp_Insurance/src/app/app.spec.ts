@@ -21,4 +21,19 @@ describe('App', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Resumen operativo');
     expect(compiled.querySelector('[aria-label="Navegación principal"]')).toBeTruthy();
   });
+
+  it('should filter and resolve anomalies', () => {
+    const fixture = TestBed.createComponent(App);
+    const app = fixture.componentInstance;
+
+    app.setFilter('critical');
+    expect(app.visibleAnomalies().length).toBe(2);
+
+    app.openConflict(app.visibleAnomalies()[0]);
+    app.applySuggestion();
+
+    expect(app.selectedAnomaly()).toBeNull();
+    expect(app.anomalies().length).toBe(4);
+    expect(app.visibleAnomalies().length).toBe(1);
+  });
 });
