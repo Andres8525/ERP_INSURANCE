@@ -2,7 +2,7 @@
   @if (sidebarOpen()) {
     <button
       class="fixed inset-0 z-30 bg-slate-950/40 lg:hidden"
-      aria-label="Cerrar navegaciÃ³n"
+      aria-label="Cerrar navegación"
       (click)="sidebarOpen.set(false)"
     ></button>
   }
@@ -39,18 +39,18 @@
 
     <div class="mx-4 mt-5 rounded-lg border border-white/10 bg-white/4.5 px-3 py-2.5">
       <p class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-        OrganizaciÃ³n
+        Organización
       </p>
       <div class="mt-1 flex items-center justify-between">
-        <span class="text-xs font-medium text-slate-100">Nexo Brokers Â· Florida</span
+        <span class="text-xs font-medium text-slate-100">Nexo Brokers · Florida</span
         ><svg class="size-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
           <path d="m5 7 5 5 5-5" />
         </svg>
       </div>
     </div>
 
-    <nav class="mt-7 flex-1 overflow-y-auto px-3" aria-label="NavegaciÃ³n principal">
-      @for (section of ['OPERACIONES', 'GESTIÃ“N', 'SISTEMA']; track section) {
+    <nav class="mt-7 flex-1 overflow-y-auto px-3" aria-label="Navegación principal">
+      @for (section of ['OPERACIONES', 'GESTIÓN', 'SISTEMA']; track section) {
         <p class="mb-2 mt-5 px-3 text-[10px] font-semibold tracking-[0.14em] text-slate-500">
           {{ section }}
         </p>
@@ -163,9 +163,9 @@
         ><span class="text-[11px] font-semibold text-teal-200">Nexo AI activo</span>
       </div>
       <p class="mt-2 text-[11px] leading-relaxed text-slate-400">
-        Ãšltimo anÃ¡lisis completado hace 4 min.
+        Último análisis completado hace 4 min.
       </p>
-      <p class="mt-1 text-[10px] text-slate-500">Sincronizado Â· 10:42 AM</p>
+      <p class="mt-1 text-[10px] text-slate-500">Sincronizado · 10:42 AM</p>
     </div>
 
     <button
@@ -203,7 +203,7 @@
       <div class="flex min-w-0 items-center gap-3">
         <button
           class="grid size-9 shrink-0 place-items-center rounded-md border border-slate-200 text-slate-600 lg:hidden"
-          aria-label="Abrir navegaciÃ³n"
+          aria-label="Abrir navegación"
           (click)="sidebarOpen.set(true)"
         >
           <svg
@@ -222,14 +222,14 @@
             activeView() === 'overview'
               ? 'Resumen'
               : activeView() === 'audit'
-                ? 'AuditorÃ­a IA'
+                ? 'Auditoría IA'
                 : activeView() === 'claims'
                   ? 'Siniestros'
                   : activeView() === 'enrollment'
                     ? 'Afiliaciones'
                     : activeView() === 'patient'
                       ? 'Pacientes'
-                      : 'OptimizaciÃ³n nube'
+                      : 'Optimización nube'
           }}</span>
         </div>
         <p class="truncate text-xs font-semibold text-slate-700 sm:hidden">Nexo Health</p>
@@ -288,7 +288,7 @@
           <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p class="text-xs font-medium text-slate-500">
-                SÃ¡bado, 4 de octubre de 2026 <span class="mx-1.5 text-slate-300">/</span> Temporada
+                Sábado, 4 de octubre de 2026 <span class="mx-1.5 text-slate-300">/</span> Temporada
                 ACA 2027
               </p>
               <h1
@@ -329,7 +329,7 @@
                   stroke-width="1.8"
                 >
                   <path d="M10 4v12M4 10h12" /></svg
-                >Nueva afiliaciÃ³n
+                >Nueva afiliación
               </button>
             </div>
           </div>
@@ -356,7 +356,7 @@
                 2,847
               </p>
               <div class="mt-2 flex items-center gap-1.5 text-[10px]">
-                <span class="font-semibold text-emerald-700">â†‘ 8.2%</span
+                <span class="font-semibold text-emerald-700">↑ 8.2%</span
                 ><span class="text-slate-400">vs. mes anterior</span>
               </div>
             </article>
@@ -379,7 +379,7 @@
                 $684.2k
               </p>
               <div class="mt-2 flex items-center gap-1.5 text-[10px]">
-                <span class="font-semibold text-emerald-700">â†‘ 4.6%</span
+                <span class="font-semibold text-emerald-700">↑ 4.6%</span
                 ><span class="text-slate-400">cartera total</span>
               </div>
             </article>
@@ -402,7 +402,7 @@
                 38
               </p>
               <div class="mt-2 flex items-center gap-1.5 text-[10px]">
-                <span class="font-semibold text-amber-700">8 requieren acciÃ³n</span
+                <span class="font-semibold text-amber-700">8 requieren acción</span
                 ><span class="text-slate-400">hoy</span>
               </div>
             </article>
@@ -425,7 +425,7 @@
                 12
               </p>
               <div class="mt-2 flex items-center gap-1.5 text-[10px]">
-                <span class="font-semibold text-rose-700">3 crÃ­ticas</span
+                <span class="font-semibold text-rose-700">3 críticas</span
                 ><span class="text-slate-400">pendientes</span>
               </div>
             </article>
@@ -442,7 +442,7 @@
                 <div>
                   <div class="flex items-center gap-2">
                     <h2 id="anomaly-heading" class="text-sm font-semibold text-slate-900">
-                      Bandeja de anomalÃ­as
+                      Bandeja de anomalías
                     </h2>
                     <span
                       class="rounded bg-rose-50 px-1.5 py-0.5 text-[10px] font-semibold text-rose-700"
@@ -455,7 +455,7 @@
                   (click)="setView('audit')"
                   class="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-slate-200 px-2.5 text-[11px] font-medium text-slate-600 hover:bg-slate-50"
                 >
-                  Ver todas <span aria-hidden="true">â†’</span>
+                  Ver todas <span aria-hidden="true">→</span>
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-2 px-4 py-3 sm:px-5">
@@ -471,14 +471,14 @@
                   [class.filter-chip-active]="filterSeverity() === 'critical'"
                 >
                   <span class="mr-1.5 inline-block size-1.5 rounded-full bg-rose-500"></span
-                  >CrÃ­ticas <span class="ml-1 tabular-nums">3</span></button
+                  >Críticas <span class="ml-1 tabular-nums">3</span></button
                 ><button
                   (click)="setFilter('review')"
                   class="filter-chip rounded border px-2.5 py-1 text-[10px] font-medium"
                   [class.filter-chip-active]="filterSeverity() === 'review'"
                 >
                   <span class="mr-1.5 inline-block size-1.5 rounded-full bg-amber-500"></span
-                  >RevisiÃ³n sugerida <span class="ml-1 tabular-nums">9</span></button
+                  >Revisión sugerida <span class="ml-1 tabular-nums">9</span></button
                 ><span class="ml-auto hidden items-center gap-1 text-[10px] text-slate-400 sm:flex"
                   ><svg
                     viewBox="0 0 20 20"
@@ -488,7 +488,7 @@
                     stroke-width="1.5"
                   >
                     <path d="M3 5h14M5.5 10h9M8 15h4" /></svg
-                  >MÃ¡s filtros</span
+                  >Más filtros</span
                 >
               </div>
               <div class="overflow-x-auto">
@@ -498,10 +498,10 @@
                   >
                     <tr>
                       <th class="px-5 py-2.5">Asegurado</th>
-                      <th class="px-3 py-2.5">AnomalÃ­a</th>
+                      <th class="px-3 py-2.5">Anomalía</th>
                       <th class="px-3 py-2.5">Prioridad</th>
                       <th class="px-3 py-2.5">Detectado</th>
-                      <th class="px-5 py-2.5 text-right">AcciÃ³n</th>
+                      <th class="px-5 py-2.5 text-right">Acción</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-100">
@@ -539,7 +539,7 @@
                               [class.bg-rose-500]="anomaly.severity === 'critical'"
                               [class.bg-amber-500]="anomaly.severity === 'review'"
                             ></span
-                            >{{ anomaly.severity === 'critical' ? 'CrÃ­tica' : 'Revisar' }}</span
+                            >{{ anomaly.severity === 'critical' ? 'Crítica' : 'Revisar' }}</span
                           >
                         </td>
                         <td class="whitespace-nowrap px-3 py-3 text-[10px] text-slate-500">
@@ -557,7 +557,7 @@
                     } @empty {
                       <tr>
                         <td colspan="5" class="px-5 py-8 text-center text-xs text-slate-500">
-                          No hay anomalÃ­as para este filtro.
+                          No hay anomalías para este filtro.
                         </td>
                       </tr>
                     }
@@ -572,7 +572,7 @@
                   (click)="setView('audit')"
                   class="text-[10px] font-semibold text-[#1e3a8a] hover:underline"
                 >
-                  Ir a auditorÃ­a â†’
+                  Ir a auditoría →
                 </button>
               </div>
             </section>
@@ -602,7 +602,7 @@
                     </h2>
                   </div>
                   <p class="ml-9 mt-1 text-[10px] text-slate-500">
-                    AnÃ¡lisis de cartera Â· actualizado ahora
+                    Análisis de cartera · actualizado ahora
                   </p>
                 </div>
                 <button
@@ -632,10 +632,10 @@
                     ></span>
                     <div>
                       <p class="text-[11px] font-semibold text-amber-900">
-                        Oportunidad de retenciÃ³n
+                        Oportunidad de retención
                       </p>
                       <p class="mt-1 text-[10px] leading-relaxed text-amber-800">
-                        17 pÃ³lizas muestran riesgo de cancelaciÃ³n antes del prÃ³ximo ciclo.
+                        17 pólizas muestran riesgo de cancelación antes del próximo ciclo.
                       </p>
                       <button
                         class="mt-2 text-[10px] font-semibold text-amber-900 underline underline-offset-2"
@@ -682,13 +682,13 @@
                   <h2 id="claims-overview" class="text-sm font-semibold text-slate-900">
                     Actividad de siniestros
                   </h2>
-                  <p class="mt-1 text-[10px] text-slate-500">Volumen de casos Â· Ãºltimos 7 dÃ­as</p>
+                  <p class="mt-1 text-[10px] text-slate-500">Volumen de casos · últimos 7 días</p>
                 </div>
                 <button
                   (click)="setView('claims')"
                   class="text-[10px] font-semibold text-[#1e3a8a]"
                 >
-                  Ver pipeline â†’
+                  Ver pipeline →
                 </button>
               </div>
               <div class="mt-5 grid grid-cols-7 gap-2 text-center">
@@ -711,7 +711,7 @@
                     <span class="bar-bar h-10.75"></span
                     ><span class="bar-bar bar-bar-muted h-7.25"></span>
                   </div>
-                  <p class="mt-2 text-[9px] text-slate-400">MiÃ©</p>
+                  <p class="mt-2 text-[9px] text-slate-400">Mié</p>
                 </div>
                 <div class="bar-group">
                   <div class="bar-pair">
@@ -732,7 +732,7 @@
                     <span class="bar-bar h-20.5"></span
                     ><span class="bar-bar bar-bar-muted h-13.25"></span>
                   </div>
-                  <p class="mt-2 text-[9px] text-slate-400">SÃ¡b</p>
+                  <p class="mt-2 text-[9px] text-slate-400">Sáb</p>
                 </div>
                 <div class="bar-group">
                   <div class="bar-pair">
@@ -762,7 +762,7 @@
                   <p class="mt-1 text-[10px] text-slate-500">Uso de expedientes en la nube</p>
                 </div>
                 <button (click)="setView('cloud')" class="text-[10px] font-semibold text-[#1e3a8a]">
-                  Gestionar â†’
+                  Gestionar →
                 </button>
               </div>
               <div class="mt-5 flex items-center gap-5">
@@ -784,7 +784,7 @@
                     <p class="mt-0.5 text-[9px] text-slate-500">Expedientes elegibles</p>
                   </div>
                   <p class="flex items-center gap-1.5 text-[9px] text-emerald-700">
-                    <span class="size-1.5 rounded-full bg-emerald-500"></span>Respaldo al dÃ­a
+                    <span class="size-1.5 rounded-full bg-emerald-500"></span>Respaldo al día
                   </p>
                 </div>
               </div>
@@ -804,7 +804,7 @@
                 id="audit-title"
                 class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
               >
-                AuditorÃ­a y control de calidad
+                Auditoría y control de calidad
               </h1>
               <p class="mt-1 text-[13px] text-slate-500">
                 Detecta, compara y resuelve inconsistencias en tu cartera.
@@ -823,17 +823,17 @@
                 <path
                   d="M4 4v6h6M20 20v-6h-6M5.5 15a7 7 0 0 0 12.8 2M18.5 9A7 7 0 0 0 5.7 7"
                 /></svg
-              >Ejecutar anÃ¡lisis
+              >Ejecutar análisis
             </button>
           </div>
           <div class="grid gap-4 sm:grid-cols-3">
             <article class="rounded-lg border border-rose-200 bg-white p-4">
-              <p class="text-[10px] font-medium text-slate-500">CrÃ­ticas</p>
+              <p class="text-[10px] font-medium text-slate-500">Críticas</p>
               <p class="mt-2 text-2xl font-semibold tabular-nums text-rose-700">3</p>
-              <p class="mt-1 text-[10px] text-slate-400">Requieren atenciÃ³n inmediata</p>
+              <p class="mt-1 text-[10px] text-slate-400">Requieren atención inmediata</p>
             </article>
             <article class="rounded-lg border border-amber-200 bg-white p-4">
-              <p class="text-[10px] font-medium text-slate-500">RevisiÃ³n sugerida</p>
+              <p class="text-[10px] font-medium text-slate-500">Revisión sugerida</p>
               <p class="mt-2 text-2xl font-semibold tabular-nums text-amber-700">9</p>
               <p class="mt-1 text-[10px] text-slate-400">Recomendaciones generadas por IA</p>
             </article>
@@ -849,7 +849,7 @@
             >
               <div>
                 <h2 class="text-sm font-semibold text-slate-900">Hallazgos detectados</h2>
-                <p class="mt-1 text-[10px] text-slate-500">12 registros requieren una decisiÃ³n</p>
+                <p class="mt-1 text-[10px] text-slate-500">12 registros requieren una decisión</p>
               </div>
               <div class="flex flex-wrap gap-2">
                 <button
@@ -863,13 +863,13 @@
                   class="filter-chip rounded border px-2.5 py-1.5 text-[10px] font-medium"
                   [class.filter-chip-active]="filterSeverity() === 'critical'"
                 >
-                  CrÃ­ticas</button
+                  Críticas</button
                 ><button
                   (click)="setFilter('review')"
                   class="filter-chip rounded border px-2.5 py-1.5 text-[10px] font-medium"
                   [class.filter-chip-active]="filterSeverity() === 'review'"
                 >
-                  RevisiÃ³n sugerida
+                  Revisión sugerida
                 </button>
               </div>
             </div>
@@ -884,7 +884,7 @@
                     <th class="px-3 py-3">Fuente</th>
                     <th class="px-3 py-3">Prioridad</th>
                     <th class="px-3 py-3">Detectado</th>
-                    <th class="px-5 py-3 text-right">AcciÃ³n</th>
+                    <th class="px-5 py-3 text-right">Acción</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
@@ -919,7 +919,7 @@
                             [class.bg-rose-500]="anomaly.severity === 'critical'"
                             [class.bg-amber-500]="anomaly.severity === 'review'"
                           ></i
-                          >{{ anomaly.severity === 'critical' ? 'CrÃ­tica' : 'RevisiÃ³n' }}</span
+                          >{{ anomaly.severity === 'critical' ? 'Crítica' : 'Revisión' }}</span
                         >
                       </td>
                       <td class="px-3 py-3.5 text-[10px] text-slate-500">{{ anomaly.date }}</td>
@@ -935,7 +935,7 @@
                   } @empty {
                     <tr>
                       <td colspan="6" class="px-5 py-12 text-center text-xs text-slate-500">
-                        No se encontraron hallazgos en esta categorÃ­a.
+                        No se encontraron hallazgos en esta categoría.
                       </td>
                     </tr>
                   }
@@ -946,7 +946,7 @@
               class="flex items-center justify-between border-t border-slate-100 px-5 py-3 text-[10px] text-slate-400"
             >
               <span>{{ visibleAnomalies().length }} hallazgos en esta vista</span
-              ><span>Ãšltimo anÃ¡lisis: hoy, 10:42 AM</span>
+              ><span>Último análisis: hoy, 10:42 AM</span>
             </div>
           </section>
         </section>
@@ -957,7 +957,7 @@
           <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p class="text-xs font-medium text-slate-500">
-                Operaciones <span class="mx-1.5 text-slate-300">/</span> GestiÃ³n de casos
+                Operaciones <span class="mx-1.5 text-slate-300">/</span> Gestión de casos
               </p>
               <h1
                 id="claims-title"
@@ -966,7 +966,7 @@
                 Pipeline de siniestros
               </h1>
               <p class="mt-1 text-[13px] text-slate-500">
-                Seguimiento logÃ­stico y resoluciÃ³n de casos de asegurados.
+                Seguimiento logístico y resolución de casos de asegurados.
               </p>
             </div>
             <button
@@ -997,8 +997,8 @@
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48291</span
                     ><span class="size-2 rounded-full bg-rose-500" title="Prioridad alta"></span>
                   </div>
-                  <p class="mt-2 text-[11px] font-semibold text-slate-800">MarÃ­a GonzÃ¡lez</p>
-                  <p class="mt-1 text-[10px] text-slate-500">Consulta de especialidad Â· Miami</p>
+                  <p class="mt-2 text-[11px] font-semibold text-slate-800">María González</p>
+                  <p class="mt-1 text-[10px] text-slate-500">Consulta de especialidad · Miami</p>
                   <div
                     class="mt-3 flex items-center justify-between border-t border-slate-100 pt-2.5"
                   >
@@ -1014,23 +1014,23 @@
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48286</span
                     ><span class="size-2 rounded-full bg-amber-400" title="Prioridad media"></span>
                   </div>
-                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Luis FernÃ¡ndez</p>
-                  <p class="mt-1 text-[10px] text-slate-500">Transporte mÃ©dico Â· Orlando</p>
+                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Luis Fernández</p>
+                  <p class="mt-1 text-[10px] text-slate-500">Transporte médico · Orlando</p>
                   <div class="mt-3 flex justify-between border-t border-slate-100 pt-2.5">
                     <span class="text-[9px] text-slate-400">Hace 5 h</span
-                    ><span class="text-[9px] text-slate-500">DocumentaciÃ³n pendiente</span>
+                    ><span class="text-[9px] text-slate-500">Documentación pendiente</span>
                   </div>
                 </article>
               </div>
               <button
                 class="mt-2 w-full rounded py-2 text-[10px] font-medium text-slate-500 hover:bg-white"
               >
-                Ver 10 mÃ¡s
+                Ver 10 más
               </button>
             </section>
             <section class="rounded-lg border border-slate-200 bg-blue-50/40 p-3.5">
               <div class="mb-3 flex items-center justify-between">
-                <h2 class="text-xs font-semibold text-slate-700">En revisiÃ³n logÃ­stica</h2>
+                <h2 class="text-xs font-semibold text-slate-700">En revisión logística</h2>
                 <span class="rounded bg-white px-1.5 py-0.5 text-[10px] tabular-nums text-slate-500"
                   >8</span
                 >
@@ -1039,10 +1039,10 @@
                 <article class="rounded-md border border-slate-200 bg-white p-3.5">
                   <div class="flex justify-between">
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48260</span
-                    ><span class="text-[9px] text-blue-700">â— Coordinando</span>
+                    ><span class="text-[9px] text-blue-700">● Coordinando</span>
                   </div>
                   <p class="mt-2 text-[11px] font-semibold text-slate-800">David Williams</p>
-                  <p class="mt-1 text-[10px] text-slate-500">Traslado de alta Â· Tampa</p>
+                  <p class="mt-1 text-[10px] text-slate-500">Traslado de alta · Tampa</p>
                   <div class="mt-3 flex justify-between border-t border-slate-100 pt-2.5">
                     <span class="text-[9px] text-slate-400">Ayer, 14:30</span
                     ><span class="text-[9px] text-slate-500">2 proveedores</span>
@@ -1051,20 +1051,20 @@
                 <article class="rounded-md border border-slate-200 bg-white p-3.5">
                   <div class="flex justify-between">
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48251</span
-                    ><span class="text-[9px] text-blue-700">â— Verificando</span>
+                    ><span class="text-[9px] text-blue-700">● Verificando</span>
                   </div>
-                  <p class="mt-2 text-[11px] font-semibold text-slate-800">SofÃ­a Rivera</p>
-                  <p class="mt-1 text-[10px] text-slate-500">Equipo domiciliario Â· Kissimmee</p>
+                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Sofía Rivera</p>
+                  <p class="mt-1 text-[10px] text-slate-500">Equipo domiciliario · Kissimmee</p>
                   <div class="mt-3 flex justify-between border-t border-slate-100 pt-2.5">
                     <span class="text-[9px] text-slate-400">Ayer, 11:08</span
-                    ><span class="text-[9px] text-slate-500">ETA 1 dÃ­a</span>
+                    ><span class="text-[9px] text-slate-500">ETA 1 día</span>
                   </div>
                 </article>
               </div>
               <button
                 class="mt-2 w-full rounded py-2 text-[10px] font-medium text-slate-500 hover:bg-white"
               >
-                Ver 6 mÃ¡s
+                Ver 6 más
               </button>
             </section>
             <section class="rounded-lg border border-slate-200 bg-emerald-50/40 p-3.5">
@@ -1078,7 +1078,7 @@
                 <article class="rounded-md border border-slate-200 bg-white p-3.5">
                   <div class="flex justify-between">
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48234</span
-                    ><span class="text-[9px] text-emerald-700">âœ“ Aprobado</span>
+                    ><span class="text-[9px] text-emerald-700">✓ Aprobado</span>
                   </div>
                   <p class="mt-2 text-[11px] font-semibold text-slate-800">Elena Morales</p>
                   <p class="mt-1 text-[10px] text-slate-500">Procedimiento ambulatorio</p>
@@ -1090,9 +1090,9 @@
                 <article class="rounded-md border border-slate-200 bg-white p-3.5">
                   <div class="flex justify-between">
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48218</span
-                    ><span class="text-[9px] text-emerald-700">âœ“ Aprobado</span>
+                    ><span class="text-[9px] text-emerald-700">✓ Aprobado</span>
                   </div>
-                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Carlos JimÃ©nez</p>
+                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Carlos Jiménez</p>
                   <p class="mt-1 text-[10px] text-slate-500">Transporte recurrente</p>
                   <div class="mt-3 flex justify-between border-t border-slate-100 pt-2.5">
                     <span class="text-[9px] text-slate-400">Oct 2, 16:44</span
@@ -1103,7 +1103,7 @@
               <button
                 class="mt-2 w-full rounded py-2 text-[10px] font-medium text-slate-500 hover:bg-white"
               >
-                Ver 12 mÃ¡s
+                Ver 12 más
               </button>
             </section>
             <section class="rounded-lg border border-slate-200 bg-rose-50/40 p-3.5">
@@ -1117,9 +1117,9 @@
                 <article class="rounded-md border border-slate-200 bg-white p-3.5">
                   <div class="flex justify-between">
                     <span class="text-[9px] font-semibold text-[#1e3a8a]">CL-48197</span
-                    ><span class="text-[9px] text-rose-700">Ã— Rechazado</span>
+                    ><span class="text-[9px] text-rose-700">× Rechazado</span>
                   </div>
-                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Patricia LÃ³pez</p>
+                  <p class="mt-2 text-[11px] font-semibold text-slate-800">Patricia López</p>
                   <p class="mt-1 text-[10px] text-slate-500">Servicio fuera de red</p>
                   <div class="mt-3 flex justify-between border-t border-slate-100 pt-2.5">
                     <span class="text-[9px] text-slate-400">Oct 2, 13:21</span
@@ -1130,7 +1130,7 @@
               <p
                 class="mt-3 rounded border border-rose-100 bg-white/70 p-2.5 text-[9px] leading-relaxed text-slate-500"
               >
-                Los casos rechazados pueden apelarse en un plazo de 30 dÃ­as.
+                Los casos rechazados pueden apelarse en un plazo de 30 días.
               </p>
             </section>
           </div>
@@ -1142,7 +1142,7 @@
                   Actualizaciones en los casos asignados
                 </p>
               </div>
-              <button class="text-[10px] font-semibold text-[#1e3a8a]">Exportar CSV â†“</button>
+              <button class="text-[10px] font-semibold text-[#1e3a8a]">Exportar CSV ↓</button>
             </div>
             <div class="overflow-x-auto">
               <table class="w-full min-w-170 text-left">
@@ -1160,7 +1160,7 @@
                 <tbody class="divide-y divide-slate-100">
                   <tr>
                     <td class="px-5 py-3 text-[10px] font-semibold text-[#1e3a8a]">CL-48291</td>
-                    <td class="px-3 py-3 text-[10px] text-slate-700">MarÃ­a GonzÃ¡lez</td>
+                    <td class="px-3 py-3 text-[10px] text-slate-700">María González</td>
                     <td class="px-3 py-3 text-[10px] text-slate-500">Consulta de especialidad</td>
                     <td class="px-3 py-3">
                       <span class="badge-review rounded px-2 py-1 text-[9px] font-medium"
@@ -1176,7 +1176,7 @@
                     <td class="px-3 py-3">
                       <span
                         class="rounded bg-blue-50 px-2 py-1 text-[9px] font-medium text-blue-700"
-                        >En revisiÃ³n</span
+                        >En revisión</span
                       >
                     </td>
                     <td class="px-5 py-3 text-right text-[10px] text-slate-400">Hoy, 09:42</td>
@@ -1192,20 +1192,20 @@
         <section aria-labelledby="enrollment-title">
           <div class="mb-6">
             <p class="text-xs font-medium text-slate-500">
-              GestiÃ³n <span class="mx-1.5 text-slate-300">/</span> Alta de asegurado
+              Gestión <span class="mx-1.5 text-slate-300">/</span> Alta de asegurado
             </p>
             <h1
               id="enrollment-title"
               class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
             >
-              Nueva afiliaciÃ³n
+              Nueva afiliación
             </h1>
             <p class="mt-1 text-[13px] text-slate-500">
               Registra al solicitante, confirma su elegibilidad y vincula un plan.
             </p>
           </div>
           <div class="mx-auto max-w-4xl">
-            <ol class="mb-6 grid grid-cols-3" aria-label="Pasos de afiliaciÃ³n">
+            <ol class="mb-6 grid grid-cols-3" aria-label="Pasos de afiliación">
               @for (step of [1, 2, 3]; track step) {
                 <li class="relative flex flex-col items-center text-center">
                   <span
@@ -1219,7 +1219,7 @@
                     [class.step-pending]="step > enrollmentStep()"
                   >
                     @if (step < enrollmentStep()) {
-                      âœ“
+                      ✓
                     } @else {
                       0{{ step }}
                     }</span
@@ -1246,16 +1246,16 @@
                 <h2 class="text-sm font-semibold text-slate-900">
                   {{
                     enrollmentStep() === 1
-                      ? 'InformaciÃ³n del solicitante'
+                      ? 'Información del solicitante'
                       : enrollmentStep() === 2
-                        ? 'VerificaciÃ³n de elegibilidad'
-                        : 'SelecciÃ³n de plan'
+                        ? 'Verificación de elegibilidad'
+                        : 'Selección de plan'
                   }}
                 </h2>
                 <p class="mt-1 text-[10px] text-slate-500">
                   {{
                     enrollmentStep() === 1
-                      ? 'Ingresa los datos demogrÃ¡ficos tal como aparecen en la identificaciÃ³n.'
+                      ? 'Ingresa los datos demográficos tal como aparecen en la identificación.'
                       : enrollmentStep() === 2
                         ? 'Revisa los datos necesarios para determinar elegibilidad de cobertura ACA.'
                         : 'Vincula el plan y los servicios aplicables al asegurado.'
@@ -1280,33 +1280,33 @@
                   ><label class="form-label"
                     >Fecha de nacimiento<input class="form-input" type="date" required /></label
                   ><label class="form-label"
-                    >NÃºmero de Seguro Social<input
+                    >Número de Seguro Social<input
                       class="form-input"
                       type="text"
                       inputmode="numeric"
-                      placeholder="â€¢â€¢â€¢-â€¢â€¢-â€¢â€¢â€¢â€¢"
+                      placeholder="•••-••-••••"
                       autocomplete="off" /></label
                   ><label class="form-label"
-                    >Correo electrÃ³nico<input
+                    >Correo electrónico<input
                       class="form-input"
                       type="email"
                       placeholder="nombre@correo.com"
                       required /></label
                   ><label class="form-label"
-                    >TelÃ©fono mÃ³vil<input
+                    >Teléfono móvil<input
                       class="form-input"
                       type="tel"
                       placeholder="(305) 555-0100"
                       required /></label
                   ><label class="form-label sm:col-span-2"
-                    >DirecciÃ³n residencial<input
+                    >Dirección residencial<input
                       class="form-input"
                       type="text"
-                      placeholder="Calle y nÃºmero, apartamento" /></label
+                      placeholder="Calle y número, apartamento" /></label
                   ><label class="form-label"
                     >Ciudad<input class="form-input" type="text" placeholder="Miami" /></label
                   ><label class="form-label"
-                    >CÃ³digo postal<input
+                    >Código postal<input
                       class="form-input"
                       type="text"
                       inputmode="numeric"
@@ -1319,20 +1319,20 @@
                   <legend class="sr-only">Elegibilidad ACA</legend>
                   <div class="rounded-md border border-blue-100 bg-blue-50/60 p-3.5">
                     <p class="text-[11px] font-semibold text-blue-900">
-                      Periodo de inscripciÃ³n abierta
+                      Periodo de inscripción abierta
                     </p>
                     <p class="mt-1 text-[10px] leading-relaxed text-blue-800">
-                      La inscripciÃ³n para cobertura 2027 comienza el 1 de noviembre de 2026.
+                      La inscripción para cobertura 2027 comienza el 1 de noviembre de 2026.
                       Verifica eventos de vida elegibles para cobertura inmediata.
                     </p>
                   </div>
                   <label class="form-label"
-                    >TamaÃ±o del hogar<select class="form-input">
+                    >Tamaño del hogar<select class="form-input">
                       <option>Seleccionar miembros</option>
                       <option>1 persona</option>
                       <option>2 personas</option>
                       <option>3 personas</option>
-                      <option>4 o mÃ¡s personas</option>
+                      <option>4 o más personas</option>
                     </select></label
                   ><label class="form-label"
                     >Ingreso anual estimado del hogar<input
@@ -1342,11 +1342,11 @@
                   /></label>
                   <fieldset>
                     <legend class="mb-2 text-[11px] font-medium text-slate-700">
-                      Â¿Tiene cobertura mÃ©dica actualmente?
+                      ¿Tiene cobertura médica actualmente?
                     </legend>
                     <div class="flex flex-wrap gap-5">
                       <label class="inline-flex items-center gap-2 text-[11px] text-slate-600"
-                        ><input type="radio" name="coverage" class="accent-teal-700" />SÃ­</label
+                        ><input type="radio" name="coverage" class="accent-teal-700" />Sí</label
                       ><label class="inline-flex items-center gap-2 text-[11px] text-slate-600"
                         ><input type="radio" name="coverage" class="accent-teal-700" />No</label
                       >
@@ -1381,15 +1381,15 @@
                     <div class="grid gap-2 sm:grid-cols-2">
                       <label
                         class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
-                        ><input type="checkbox" class="accent-teal-700" />Transporte mÃ©dico</label
+                        ><input type="checkbox" class="accent-teal-700" />Transporte médico</label
                       ><label
                         class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
-                        ><input type="checkbox" class="accent-teal-700" />CoordinaciÃ³n de
+                        ><input type="checkbox" class="accent-teal-700" />Coordinación de
                         cuidados</label
                       ><label
                         class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
                         ><input type="checkbox" class="accent-teal-700" />Entrega de equipo
-                        mÃ©dico</label
+                        médico</label
                       ><label
                         class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
                         ><input type="checkbox" class="accent-teal-700" />Recordatorios de
@@ -1417,7 +1417,7 @@
                     type="submit"
                     class="inline-flex h-9 items-center gap-2 rounded-md bg-teal-700 px-4 text-xs font-semibold text-white hover:bg-teal-800"
                   >
-                    {{ enrollmentStep() === 3 ? 'Completar afiliaciÃ³n' : 'Continuar'
+                    {{ enrollmentStep() === 3 ? 'Completar afiliación' : 'Continuar'
                     }}<svg
                       viewBox="0 0 20 20"
                       class="size-3.5"
@@ -1432,7 +1432,7 @@
               </div>
             </form>
             <p class="mt-3 text-center text-[9px] text-slate-400">
-              La informaciÃ³n del paciente se gestiona de forma segura y confidencial.
+              La información del paciente se gestiona de forma segura y confidencial.
             </p>
           </div>
         </section>
@@ -1443,13 +1443,13 @@
           <div class="mb-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p class="text-xs font-medium text-slate-500">
-                GestiÃ³n <span class="mx-1.5 text-slate-300">/</span> Perfil del asegurado
+                Gestión <span class="mx-1.5 text-slate-300">/</span> Perfil del asegurado
               </p>
               <h1
                 id="patient-title"
                 class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
               >
-                Perfil 360Â° del paciente
+                Perfil 360° del paciente
               </h1>
             </div>
             <div class="flex gap-2">
@@ -1467,7 +1467,7 @@
                 >Registrar servicio</button
               ><button
                 class="grid size-9 place-items-center rounded-md border border-slate-200 bg-white text-slate-600"
-                aria-label="MÃ¡s acciones"
+                aria-label="Más acciones"
               >
                 <svg viewBox="0 0 20 20" class="size-4" fill="currentColor">
                   <circle cx="4" cy="10" r="1.3" />
@@ -1496,11 +1496,11 @@
                 </div>
                 <p class="mt-1 text-[11px] text-slate-500">
                   ID de miembro <span class="font-mono text-slate-700">{{ patient.memberId }}</span
-                  ><span class="mx-2 text-slate-300">Â·</span>Desde {{ patient.enrolledAt }}
+                  ><span class="mx-2 text-slate-300">·</span>Desde {{ patient.enrolledAt }}
                 </p>
                 <p class="mt-1 text-[10px] text-slate-400">
-                  {{ patient.city }}, {{ patient.state }} Â· {{ patient.zipCode }}
-                  <span class="mx-1.5">Â·</span> {{ patient.phone }}
+                  {{ patient.city }}, {{ patient.state }} · {{ patient.zipCode }}
+                  <span class="mx-1.5">·</span> {{ patient.phone }}
                 </p>
               </div>
               <div
@@ -1514,7 +1514,7 @@
                 </div>
                 <div>
                   <p class="text-[9px] uppercase tracking-wide text-slate-400">
-                    Ãšltima actualizaciÃ³n
+                    Última actualización
                   </p>
                   <p class="mt-1 text-[11px] font-medium text-slate-700">
                     {{ patient.lastUpdated }}
@@ -1528,9 +1528,9 @@
               >
                 Resumen</button
               ><button class="profile-tab whitespace-nowrap py-3 text-[11px] font-medium">
-                PÃ³liza y cobertura</button
+                Póliza y cobertura</button
               ><button class="profile-tab whitespace-nowrap py-3 text-[11px] font-medium">
-                FacturaciÃ³n</button
+                Facturación</button
               ><button class="profile-tab whitespace-nowrap py-3 text-[11px] font-medium">
                 Documentos
               </button>
@@ -1554,9 +1554,9 @@
                           <path d="M5 12h14M12 5v14" />
                           <circle cx="12" cy="12" r="9" /></svg
                       ></span>
-                      <h2 class="text-sm font-semibold text-slate-900">PÃ³liza activa</h2>
+                      <h2 class="text-sm font-semibold text-slate-900">Póliza activa</h2>
                     </div>
-                    <p class="ml-9 mt-1 text-[10px] text-slate-500">Cobertura mÃ©dica individual</p>
+                    <p class="ml-9 mt-1 text-[10px] text-slate-500">Cobertura médica individual</p>
                   </div>
                   <span
                     class="rounded bg-emerald-50 px-2 py-1 text-[9px] font-semibold text-emerald-700"
@@ -1579,7 +1579,7 @@
                     </dd>
                   </div>
                   <div>
-                    <dt class="text-[9px] text-slate-400">ID de pÃ³liza</dt>
+                    <dt class="text-[9px] text-slate-400">ID de póliza</dt>
                     <dd class="mt-1 font-mono text-[10px] font-medium text-slate-800">
                       {{ patient.policy.policyId }}
                     </dd>
@@ -1587,7 +1587,7 @@
                   <div>
                     <dt class="text-[9px] text-slate-400">Vigencia</dt>
                     <dd class="mt-1 text-[11px] font-medium text-slate-800">
-                      {{ patient.policy.effectiveDate }} â€“ {{ patient.policy.renewalDate }}
+                      {{ patient.policy.effectiveDate }} – {{ patient.policy.renewalDate }}
                     </dd>
                   </div>
                   <div>
@@ -1608,10 +1608,10 @@
               <section class="rounded-lg border border-slate-200 bg-white">
                 <div class="flex items-center justify-between border-b border-slate-100 px-5 py-4">
                   <div>
-                    <h2 class="text-sm font-semibold text-slate-900">Historial de facturaciÃ³n</h2>
-                    <p class="mt-1 text-[10px] text-slate-500">Ãšltimos pagos de la pÃ³liza</p>
+                    <h2 class="text-sm font-semibold text-slate-900">Historial de facturación</h2>
+                    <p class="mt-1 text-[10px] text-slate-500">Últimos pagos de la póliza</p>
                   </div>
-                  <button class="text-[10px] font-semibold text-[#1e3a8a]">Ver historial â†’</button>
+                  <button class="text-[10px] font-semibold text-[#1e3a8a]">Ver historial →</button>
                 </div>
                 <div class="overflow-x-auto">
                   <table class="w-full min-w-107.5 text-left">
@@ -1707,15 +1707,15 @@
                 id="cloud-title"
                 class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
               >
-                OptimizaciÃ³n de nube
+                Optimización de nube
               </h1>
               <p class="mt-1 text-[13px] text-slate-500">
-                Gestiona expedientes obsoletos con trazabilidad y polÃ­ticas de retenciÃ³n.
+                Gestiona expedientes obsoletos con trazabilidad y políticas de retención.
               </p>
             </div>
             <span
               class="inline-flex h-8 items-center gap-1.5 self-start rounded border border-emerald-200 bg-emerald-50 px-2.5 text-[10px] font-medium text-emerald-700 sm:self-auto"
-              ><span class="size-1.5 rounded-full bg-emerald-500"></span>PolÃ­tica HIPAA activa</span
+              ><span class="size-1.5 rounded-full bg-emerald-500"></span>Política HIPAA activa</span
             >
           </div>
           <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -1734,17 +1734,17 @@
               <p class="mt-2 text-2xl font-semibold tabular-nums text-teal-700">
                 340 <span class="text-sm font-medium text-teal-600">GB</span>
               </p>
-              <p class="mt-2 text-[9px] text-slate-400">Expedientes que cumplen retenciÃ³n</p>
+              <p class="mt-2 text-[9px] text-slate-400">Expedientes que cumplen retención</p>
             </article>
             <article class="rounded-lg border border-slate-200 bg-white p-4">
               <p class="text-[10px] font-medium text-slate-500">Expedientes perfilados</p>
               <p class="mt-2 text-2xl font-semibold tabular-nums text-slate-900">1,284</p>
-              <p class="mt-2 text-[9px] text-slate-400">Sin actividad en mÃ¡s de 7 aÃ±os</p>
+              <p class="mt-2 text-[9px] text-slate-400">Sin actividad en más de 7 años</p>
             </article>
             <article class="rounded-lg border border-slate-200 bg-white p-4">
-              <p class="text-[10px] font-medium text-slate-500">Ãšltimo escaneo</p>
+              <p class="text-[10px] font-medium text-slate-500">Último escaneo</p>
               <p class="mt-2 text-2xl font-semibold text-slate-900">Hoy</p>
-              <p class="mt-2 text-[9px] text-slate-400">10:42 AM Â· Sin errores</p>
+              <p class="mt-2 text-[9px] text-slate-400">10:42 AM · Sin errores</p>
             </article>
           </div>
           <div class="mt-5 grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
@@ -1754,14 +1754,14 @@
                   Perfil de expedientes obsoletos
                 </h2>
                 <p class="mt-1 text-[10px] text-slate-500">
-                  DistribuciÃ³n por tipo de documento y periodo de inactividad
+                  Distribución por tipo de documento y periodo de inactividad
                 </p>
               </div>
               <div class="space-y-4 p-5">
                 <div>
                   <div class="mb-1.5 flex justify-between text-[10px]">
-                    <span class="text-slate-600">Documentos de pÃ³liza</span
-                    ><span class="tabular-nums text-slate-500">486 Â· 38%</span>
+                    <span class="text-slate-600">Documentos de póliza</span
+                    ><span class="tabular-nums text-slate-500">486 · 38%</span>
                   </div>
                   <div class="h-2 rounded-full bg-slate-100">
                     <div class="h-2 w-[38%] rounded-full bg-[#1e3a8a]"></div>
@@ -1769,8 +1769,8 @@
                 </div>
                 <div>
                   <div class="mb-1.5 flex justify-between text-[10px]">
-                    <span class="text-slate-600">FacturaciÃ³n y pagos</span
-                    ><span class="tabular-nums text-slate-500">322 Â· 25%</span>
+                    <span class="text-slate-600">Facturación y pagos</span
+                    ><span class="tabular-nums text-slate-500">322 · 25%</span>
                   </div>
                   <div class="h-2 rounded-full bg-slate-100">
                     <div class="h-2 w-1/4 rounded-full bg-teal-600"></div>
@@ -1779,7 +1779,7 @@
                 <div>
                   <div class="mb-1.5 flex justify-between text-[10px]">
                     <span class="text-slate-600">Registros de siniestros</span
-                    ><span class="tabular-nums text-slate-500">296 Â· 23%</span>
+                    ><span class="tabular-nums text-slate-500">296 · 23%</span>
                   </div>
                   <div class="h-2 rounded-full bg-slate-100">
                     <div class="h-2 w-[23%] rounded-full bg-amber-500"></div>
@@ -1788,17 +1788,17 @@
                 <div>
                   <div class="mb-1.5 flex justify-between text-[10px]">
                     <span class="text-slate-600">Comunicaciones y adjuntos</span
-                    ><span class="tabular-nums text-slate-500">180 Â· 14%</span>
+                    ><span class="tabular-nums text-slate-500">180 · 14%</span>
                   </div>
                   <div class="h-2 rounded-full bg-slate-100">
                     <div class="h-2 w-[14%] rounded-full bg-slate-400"></div>
                   </div>
                 </div>
                 <div class="mt-2 rounded-md border border-blue-100 bg-blue-50/60 p-3">
-                  <p class="text-[10px] font-semibold text-blue-900">RetenciÃ³n segÃºn polÃ­tica</p>
+                  <p class="text-[10px] font-semibold text-blue-900">Retención según política</p>
                   <p class="mt-1 text-[9px] leading-relaxed text-blue-800">
                     Los registros financieros y de siniestros se conservan durante el periodo legal
-                    aplicable antes de permitir su eliminaciÃ³n permanente.
+                    aplicable antes de permitir su eliminación permanente.
                   </p>
                 </div>
               </div>
@@ -1807,7 +1807,7 @@
               <div class="border-b border-slate-100 px-5 py-4">
                 <h2 class="text-sm font-semibold text-slate-900">Acciones en lote</h2>
                 <p class="mt-1 text-[10px] text-slate-500">
-                  Aplica una acciÃ³n a los expedientes elegibles.
+                  Aplica una acción a los expedientes elegibles.
                 </p>
               </div>
               <div class="space-y-3 p-5">
@@ -1832,13 +1832,13 @@
                     ><span class="block text-[11px] font-semibold text-slate-800"
                       >Purgar permanentemente</span
                     ><span class="mt-1 block text-[9px] leading-relaxed text-slate-500"
-                      >Eliminar de forma definitiva Ãºnicamente expedientes aprobados y fuera de
-                      retenciÃ³n.</span
+                      >Eliminar de forma definitiva únicamente expedientes aprobados y fuera de
+                      retención.</span
                     ></span
                   ></label
                 ><label class="flex items-start gap-2 text-[9px] leading-relaxed text-slate-500"
                   ><input type="checkbox" class="mt-0.5 accent-teal-700" />Confirmo que los
-                  expedientes seleccionados cumplen la normativa de retenciÃ³n.</label
+                  expedientes seleccionados cumplen la normativa de retención.</label
                 ><button
                   class="inline-flex h-9 w-full items-center justify-center gap-2 rounded-md bg-teal-700 text-xs font-semibold text-white hover:bg-teal-800"
                 >
@@ -1854,7 +1854,7 @@
                 ><button
                   class="w-full py-1 text-[10px] font-medium text-slate-500 hover:text-slate-800"
                 >
-                  Ver registro de auditorÃ­a
+                  Ver registro de auditoría
                 </button>
               </div>
             </section>
@@ -1862,9 +1862,9 @@
           <section class="mt-5 rounded-lg border border-slate-200 bg-white">
             <div class="flex items-center justify-between border-b border-slate-100 px-5 py-4">
               <div>
-                <h2 class="text-sm font-semibold text-slate-900">Cola de revisiÃ³n</h2>
+                <h2 class="text-sm font-semibold text-slate-900">Cola de revisión</h2>
                 <p class="mt-1 text-[10px] text-slate-500">
-                  Registros identificados para archivo o revisiÃ³n de retenciÃ³n
+                  Registros identificados para archivo o revisión de retención
                 </p>
               </div>
               <button
@@ -1888,8 +1888,8 @@
                     </th>
                     <th class="px-3 py-2.5">Expediente</th>
                     <th class="px-3 py-2.5">Tipo</th>
-                    <th class="px-3 py-2.5">Ãšltima actividad</th>
-                    <th class="px-3 py-2.5">TamaÃ±o</th>
+                    <th class="px-3 py-2.5">Última actividad</th>
+                    <th class="px-3 py-2.5">Tamaño</th>
                     <th class="px-5 py-2.5">Elegibilidad</th>
                   </tr>
                 </thead>
@@ -1900,7 +1900,7 @@
                         <input type="checkbox" class="accent-teal-700" [attr.aria-label]="'Seleccionar ' + candidate.id" />
                       </td>
                       <td class="px-3 py-3 text-[10px] font-medium text-slate-800">
-                        {{ candidate.id }} Â· {{ candidate.description }}
+                        {{ candidate.id }} · {{ candidate.description }}
                       </td>
                       <td class="px-3 py-3 text-[10px] text-slate-500">
                         {{ candidate.documentType }}
@@ -1920,7 +1920,7 @@
                           [class.text-amber-700]="candidate.eligibility === 'legal-review'"
                           [class.bg-rose-50]="candidate.eligibility === 'retention-hold'"
                           [class.text-rose-700]="candidate.eligibility === 'retention-hold'"
-                          >{{ candidate.eligibility === 'archivable' ? 'Archivable' : candidate.eligibility === 'legal-review' ? 'RevisiÃ³n legal' : 'RetenciÃ³n activa' }}</span
+                          >{{ candidate.eligibility === 'archivable' ? 'Archivable' : candidate.eligibility === 'legal-review' ? 'Revisión legal' : 'Retención activa' }}</span
                         >
                       </td>
                     </tr>
@@ -1934,8 +1934,8 @@
       <footer
         class="mt-8 flex flex-col justify-between gap-1 border-t border-slate-200 pt-4 text-[9px] text-slate-400 sm:flex-row"
       >
-        <span>Nexo Health Â· Operaciones de seguros mÃ©dicos</span
-        ><span>Datos de demostraciÃ³n Â· Entorno seguro</span>
+        <span>Nexo Health · Operaciones de seguros médicos</span
+        ><span>Datos de demostración · Entorno seguro</span>
       </footer>
     </main>
   </div>
@@ -1970,13 +1970,13 @@
                     d="M8 4H5a1 1 0 0 0-1 1v3m12-4h3a1 1 0 0 1 1 1v3M4 16v3a1 1 0 0 0 1 1h3m12-4v3a1 1 0 0 1-1 1h-3M4 12h16"
                   /></svg></span
               ><span class="text-[10px] font-semibold uppercase tracking-wide text-[#1e3a8a]"
-                >ComparaciÃ³n de registros</span
+                >Comparación de registros</span
               >
             </div>
             <h2 id="conflict-title" class="mt-3 text-lg font-semibold text-slate-900">
               Resolver discrepancia
             </h2>
-            <p class="mt-1 text-[11px] text-slate-500">{{ anomaly.id }} Â· {{ anomaly.member }}</p>
+            <p class="mt-1 text-[11px] text-slate-500">{{ anomaly.id }} · {{ anomaly.member }}</p>
           </div>
           <button
             class="grid size-8 place-items-center rounded text-slate-400 hover:bg-slate-100 hover:text-slate-700"
@@ -2004,7 +2004,7 @@
           >
             <p class="text-[11px] font-semibold text-slate-800">{{ anomaly.issue }}</p>
             <p class="mt-1 text-[10px] text-slate-600">
-              {{ anomaly.detail }} Â· Detectado {{ anomaly.date.toLowerCase() }}
+              {{ anomaly.detail }} · Detectado {{ anomaly.date.toLowerCase() }}
             </p>
           </div>
           <div class="mt-5 grid gap-3 sm:grid-cols-2">
@@ -2041,7 +2041,7 @@
             <article class="rounded-md border border-slate-200">
               <div class="border-b border-slate-100 bg-slate-50 px-3.5 py-3">
                 <p class="text-[11px] font-semibold text-slate-800">Registro B</p>
-                <p class="mt-0.5 text-[9px] text-slate-500">Registro interno Â· {{ anomaly.date }}</p>
+                <p class="mt-0.5 text-[9px] text-slate-500">Registro interno · {{ anomaly.date }}</p>
               </div>
               <dl class="divide-y divide-slate-100 px-3.5">
                 <div class="py-3">
@@ -2055,7 +2055,7 @@
                   </dd>
                 </div>
                 <div class="py-3">
-                  <dt class="text-[9px] text-slate-400">RecomendaciÃ³n</dt>
+                  <dt class="text-[9px] text-slate-400">Recomendación</dt>
                   <dd class="mt-1 text-[10px] font-medium text-slate-700">
                     {{ anomaly.comparison.recommendedValue }}
                   </dd>
@@ -2089,7 +2089,7 @@
                   {{ anomaly.comparison.evidence }}.
                 </p>
                 <p class="mt-2 text-[9px] text-blue-700">
-                  Confianza del modelo <strong>{{ anomaly.confidence }}%</strong> Â·
+                  Confianza del modelo <strong>{{ anomaly.confidence }}%</strong> ·
                   Fuente: {{ anomaly.source }}
                 </p>
               </div>
@@ -2097,7 +2097,7 @@
           </div>
           <label class="mt-4 flex items-start gap-2 text-[9px] leading-relaxed text-slate-500"
             ><input type="checkbox" class="mt-0.5 accent-teal-700" />He revisado los registros y
-            autorizo aplicar la recomendaciÃ³n al expediente.</label
+            autorizo aplicar la recomendación al expediente.</label
           >
         </div>
         <footer
@@ -2107,7 +2107,7 @@
             class="h-9 rounded-md px-3 text-xs font-medium text-slate-500 hover:bg-slate-50"
             (click)="closeConflict()"
           >
-            Posponer revisiÃ³n
+            Posponer revisión
           </button>
           <div class="flex gap-2">
             <button
@@ -2127,7 +2127,7 @@
                 stroke-width="1.8"
               >
                 <path d="m4 10 4 4 8-8" /></svg
-              >AutocorrecciÃ³n sugerida por IA
+              >Autocorrección sugerida por IA
             </button>
           </div>
         </footer>
