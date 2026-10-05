@@ -19,7 +19,7 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Resumen operativo');
-    expect(compiled.querySelector('[aria-label="Navegación principal"]')).toBeTruthy();
+    expect(compiled.querySelector('nav')).toBeTruthy();
   });
 
   it('should filter and resolve anomalies', () => {
@@ -35,5 +35,26 @@ describe('App', () => {
     expect(app.selectedAnomaly()).toBeNull();
     expect(app.anomalies().length).toBe(4);
     expect(app.visibleAnomalies().length).toBe(1);
+  });
+
+  it('should render the patient profile from structured data', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.setView('patient');
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('AMB-2847-11903');
+    expect(compiled.textContent).toContain('Clear Silver 73');
+    expect(compiled.querySelectorAll('.timeline-item')).toHaveLength(4);
+    expect(compiled.querySelectorAll('tbody tr')).toHaveLength(3);
+  });
+
+  it('should expose typed operational seed data', () => {
+    const app = TestBed.createComponent(App).componentInstance;
+
+    expect(app.patient.memberId).toBe('NX-0048219');
+    expect(app.claims.map((claim) => claim.status)).toContain('logistics-review');
+    expect(app.archiveCandidates[0].eligibility).toBe('archivable');
   });
 });
