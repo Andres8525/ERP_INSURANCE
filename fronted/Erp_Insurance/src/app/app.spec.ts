@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the operations dashboard', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Erp_Insurance');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Resumen operativo');
+    expect(compiled.querySelector('[aria-label="Navegación principal"]')).toBeTruthy();
   });
 });
