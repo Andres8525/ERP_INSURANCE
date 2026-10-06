@@ -19,7 +19,6 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/auth")

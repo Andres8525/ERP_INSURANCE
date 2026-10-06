@@ -2,7 +2,6 @@ package com.erp.insurance.patients;
 
 import com.erp.insurance.domain.DomainEnums.AccountStatus;
 import com.erp.insurance.domain.DomainEnums.AcaEligibilityStatus;
-import com.erp.insurance.policies.PolicyEntity;
 import com.erp.insurance.security.EmailLookup;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;

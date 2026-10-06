@@ -1,6 +1,5 @@
 package com.erp.insurance.security;
 
-import com.erp.insurance.domain.DomainEnums.UserRole;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
