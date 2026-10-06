@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -61,6 +62,19 @@ public class SecurityConfiguration {
     }
 
     @Bean
+    org.springframework.boot.ApplicationRunner validateEncryptionKey(@Value("${app.encryption.key}") String configuredKey) {
+        return args -> {
+            try {
+                if (Base64.getDecoder().decode(configuredKey).length != 32) {
+                    throw new IllegalStateException("ENCRYPTION_KEY must decode to exactly 32 bytes");
+                }
+            } catch (IllegalArgumentException exception) {
+                throw new IllegalStateException("ENCRYPTION_KEY must be valid Base64", exception);
+            }
+        };
+    }
+
+    @Bean
     JwtDecoder jwtDecoder(SecretKey jwtSecretKey) {
         return NimbusJwtDecoder.withSecretKey(jwtSecretKey).build();
     }
@@ -87,7 +101,7 @@ public class SecurityConfiguration {
     @Bean
     JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-        converter.setJwtGrantedAuthoritiesConverter((Converter<Jwt, List<SimpleGrantedAuthority>>) jwt -> {
+        converter.setJwtGrantedAuthoritiesConverter((Converter<Jwt, java.util.Collection<GrantedAuthority>>) jwt -> {
             String role = jwt.getClaimAsString("role");
             return role == null ? List.of() : List.of(new SimpleGrantedAuthority("ROLE_" + role));
         });

@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.UUID;
 
@@ -18,6 +19,7 @@ import static com.erp.insurance.audit.AuditDtos.*;
 @RestController
 @RequestMapping("/api/audit")
 @PreAuthorize("hasAnyRole('ADMIN', 'AUDITOR')")
+@Validated
 public class AuditController {
     private final AuditService audit;
 

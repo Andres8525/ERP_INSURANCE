@@ -23,6 +23,34 @@ Flyway aplica `V1__initial_schema.sql` al arranque. Para crear el primer adminis
 
 Las respuestas paginadas siguen el formato Spring `Page`: `content`, `totalElements`, `totalPages`, `number`, `size` y `first/last`.
 
+Ejemplos para el frontend:
+
+```json
+POST /api/patients
+{
+	"firstName": "Ana",
+	"lastName": "Lopez",
+	"email": "ana@example.test",
+	"phone": "+1-555-0100",
+	"dateOfBirth": "1990-04-12",
+	"householdIncome": 42000.00,
+	"acaEligibilityStatus": "PENDING",
+	"accountStatus": "PENDING"
+}
+```
+
+```json
+POST /api/audit/resolve-batch
+{
+	"ids": ["a7e93fc7-a6c6-468b-a0bd-f538aeb1dd75"],
+	"action": "ARCHIVAR_DEFINITIVO"
+}
+```
+
+`GET /api/audit/anomalies?page=0&size=25&severity=RED&resolutionStatus=OPEN` devuelve `content` con campos `affectedRecordType`, `affectedRecordId` y sugerencia opcional. Los números de página comienzan en cero, como Spring Data.
+
+Pruebas y build: `mvn test` desde `backend`.
+
 ## Seguridad y limites de cumplimiento
 
 Nombres, email, telefono, fecha de nacimiento, ingreso del hogar, numero de poliza, descripcion de siniestro y valores sugeridos se cifran con AES-256-GCM en la capa JPA. El email se busca mediante un HMAC aparte para no guardar un indice reversible. Contrasenas se almacenan con BCrypt; JWT firma HS256. CORS usa allowlist y las rutas de auditoria requieren rol. La clave no se persiste junto a los datos.

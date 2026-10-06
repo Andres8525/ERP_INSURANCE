@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -14,19 +13,15 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/claims")
 public class ClaimsController {
-    private final ClaimRepository claims;
+    private final ClaimsService claims;
 
-    public ClaimsController(ClaimRepository claims) {
+    public ClaimsController(ClaimsService claims) {
         this.claims = claims;
     }
 
     @GetMapping("/pipeline")
     public Map<ClaimStatus, List<ClaimResponse>> pipeline() {
-        Map<ClaimStatus, List<ClaimResponse>> pipeline = new EnumMap<>(ClaimStatus.class);
-        for (ClaimStatus status : ClaimStatus.values()) {
-            pipeline.put(status, claims.findByStatusOrderByCreatedAtDesc(status).stream().map(ClaimResponse::from).toList());
-        }
-        return pipeline;
+        return claims.pipeline();
     }
 
     public record ClaimResponse(UUID id, String claimNumber, String description, ClaimStatus status,

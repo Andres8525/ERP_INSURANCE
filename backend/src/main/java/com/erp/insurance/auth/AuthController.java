@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -26,11 +27,14 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final UserRepository users;
     private final JwtEncoder jwtEncoder;
+    private final long ttlMinutes;
 
-    public AuthController(AuthenticationManager authenticationManager, UserRepository users, JwtEncoder jwtEncoder) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository users, JwtEncoder jwtEncoder,
+                          @Value("${app.security.jwt-ttl-minutes:15}") long ttlMinutes) {
         this.authenticationManager = authenticationManager;
         this.users = users;
         this.jwtEncoder = jwtEncoder;
+        this.ttlMinutes = ttlMinutes;
     }
 
     @PostMapping("/login")
@@ -41,7 +45,7 @@ public class AuthController {
             UserEntity user = users.findByEmailIgnoreCaseAndActiveTrue(authentication.getName())
                     .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid email or password"));
             Instant now = Instant.now();
-            Instant expiry = now.plusSeconds(900);
+            Instant expiry = now.plusSeconds(ttlMinutes * 60);
             JwtClaimsSet claims = JwtClaimsSet.builder()
                     .issuer("erp-insurance-api")
                     .issuedAt(now)
