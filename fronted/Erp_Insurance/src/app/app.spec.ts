@@ -50,6 +50,20 @@ describe('App', () => {
     expect(compiled.querySelectorAll('tbody tr')).toHaveLength(3);
   });
 
+  it('should render the claims Kanban from typed pipeline data', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.setView('claims');
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('CL-48291');
+    expect(compiled.textContent).toContain('CL-48260');
+    expect(compiled.textContent).toContain('CL-48234');
+    expect(compiled.textContent).toContain('CL-48197');
+    expect(compiled.textContent).toContain('En revisión logística');
+  });
+
   it('should expose typed operational seed data', () => {
     const app = TestBed.createComponent(App).componentInstance;
 

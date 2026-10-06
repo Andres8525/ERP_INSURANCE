@@ -1,12 +1,24 @@
 import { Component, computed, signal } from '@angular/core';
 import { ERP_DEMO_DATA, NAVIGATION_ITEMS } from './data/erp.demo-data';
 import { AnomalySeverity, AuditAnomaly, NavigationItem, ViewKey } from './models/erp.models';
+import { AuditPageComponent } from './features/audit/audit-page.component';
+import { ClaimsPageComponent } from './features/claims/claims-page.component';
+import { CloudArchiveComponent } from './features/cloud/cloud-archive.component';
+import { EnrollmentPageComponent } from './features/enrollment/enrollment-page.component';
+import { OverviewPageComponent } from './features/overview/overview-page.component';
+import { PatientProfileComponent } from './features/patient/patient-profile.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [
+    OverviewPageComponent,
+    AuditPageComponent,
+    ClaimsPageComponent,
+    EnrollmentPageComponent,
+    PatientProfileComponent,
+    CloudArchiveComponent,
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
   readonly activeView = signal<ViewKey>('overview');

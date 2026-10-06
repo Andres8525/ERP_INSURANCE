@@ -1,0 +1,247 @@
+        <section aria-labelledby="enrollment-title">
+          <div class="mb-6">
+            <p class="text-xs font-medium text-slate-500">
+              Gestión <span class="mx-1.5 text-slate-300">/</span> Alta de asegurado
+            </p>
+            <h1
+              id="enrollment-title"
+              class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
+            >
+              Nueva afiliación
+            </h1>
+            <p class="mt-1 text-[13px] text-slate-500">
+              Registra al solicitante, confirma su elegibilidad y vincula un plan.
+            </p>
+          </div>
+          <div class="mx-auto max-w-4xl">
+            <ol class="mb-6 grid grid-cols-3" aria-label="Pasos de afiliación">
+              @for (step of [1, 2, 3]; track step) {
+                <li class="relative flex flex-col items-center text-center">
+                  <span
+                    class="step-connector"
+                    [class.step-connector-done]="step < step"
+                  ></span
+                  ><span
+                    class="relative z-10 grid size-8 place-items-center rounded-full border text-xs font-semibold"
+                    [class.step-active]="step === step"
+                    [class.step-done]="step < step"
+                    [class.step-pending]="step > step"
+                  >
+                    @if (step < step) {
+                      ✓
+                    } @else {
+                      0{{ step }}
+                    }</span
+                  ><span
+                    class="mt-2 text-[10px] font-medium"
+                    [class.text-slate-800]="step <= step"
+                    [class.text-slate-400]="step > step"
+                    >{{
+                      step === 1
+                        ? 'Datos del paciente'
+                        : step === 2
+                          ? 'Elegibilidad ACA'
+                          : 'Plan y servicios'
+                    }}</span
+                  >
+                </li>
+              }
+            </ol>
+            <form
+              class="rounded-lg border border-slate-200 bg-white"
+              (submit)="$event.preventDefault(); stepChange.emit(1)"
+            >
+              <div class="border-b border-slate-100 px-5 py-4 sm:px-7">
+                <h2 class="text-sm font-semibold text-slate-900">
+                  {{
+                    step === 1
+                      ? 'Información del solicitante'
+                      : step === 2
+                        ? 'Verificación de elegibilidad'
+                        : 'Selección de plan'
+                  }}
+                </h2>
+                <p class="mt-1 text-[10px] text-slate-500">
+                  {{
+                    step === 1
+                      ? 'Ingresa los datos demográficos tal como aparecen en la identificación.'
+                      : step === 2
+                        ? 'Revisa los datos necesarios para determinar elegibilidad de cobertura ACA.'
+                        : 'Vincula el plan y los servicios aplicables al asegurado.'
+                  }}
+                </p>
+              </div>
+              @if (step === 1) {
+                <fieldset class="grid gap-x-5 gap-y-4 p-5 sm:grid-cols-2 sm:px-7 sm:py-6">
+                  <legend class="sr-only">Datos del paciente</legend>
+                  <label class="form-label"
+                    >Nombre legal<input
+                      class="form-input"
+                      type="text"
+                      placeholder="Nombre"
+                      required /></label
+                  ><label class="form-label"
+                    >Apellido legal<input
+                      class="form-input"
+                      type="text"
+                      placeholder="Apellido"
+                      required /></label
+                  ><label class="form-label"
+                    >Fecha de nacimiento<input class="form-input" type="date" required /></label
+                  ><label class="form-label"
+                    >Número de Seguro Social<input
+                      class="form-input"
+                      type="text"
+                      inputmode="numeric"
+                      placeholder="•••-••-••••"
+                      autocomplete="off" /></label
+                  ><label class="form-label"
+                    >Correo electrónico<input
+                      class="form-input"
+                      type="email"
+                      placeholder="nombre@correo.com"
+                      required /></label
+                  ><label class="form-label"
+                    >Teléfono móvil<input
+                      class="form-input"
+                      type="tel"
+                      placeholder="(305) 555-0100"
+                      required /></label
+                  ><label class="form-label sm:col-span-2"
+                    >Dirección residencial<input
+                      class="form-input"
+                      type="text"
+                      placeholder="Calle y número, apartamento" /></label
+                  ><label class="form-label"
+                    >Ciudad<input class="form-input" type="text" placeholder="Miami" /></label
+                  ><label class="form-label"
+                    >Código postal<input
+                      class="form-input"
+                      type="text"
+                      inputmode="numeric"
+                      placeholder="33101"
+                  /></label>
+                </fieldset>
+              }
+              @if (step === 2) {
+                <fieldset class="space-y-4 p-5 sm:px-7 sm:py-6">
+                  <legend class="sr-only">Elegibilidad ACA</legend>
+                  <div class="rounded-md border border-blue-100 bg-blue-50/60 p-3.5">
+                    <p class="text-[11px] font-semibold text-blue-900">
+                      Periodo de inscripción abierta
+                    </p>
+                    <p class="mt-1 text-[10px] leading-relaxed text-blue-800">
+                      La inscripción para cobertura 2027 comienza el 1 de noviembre de 2026.
+                      Verifica eventos de vida elegibles para cobertura inmediata.
+                    </p>
+                  </div>
+                  <label class="form-label"
+                    >Tamaño del hogar<select class="form-input">
+                      <option>Seleccionar miembros</option>
+                      <option>1 persona</option>
+                      <option>2 personas</option>
+                      <option>3 personas</option>
+                      <option>4 o más personas</option>
+                    </select></label
+                  ><label class="form-label"
+                    >Ingreso anual estimado del hogar<input
+                      class="form-input"
+                      type="number"
+                      placeholder="$ 0.00"
+                  /></label>
+                  <fieldset>
+                    <legend class="mb-2 text-[11px] font-medium text-slate-700">
+                      ¿Tiene cobertura médica actualmente?
+                    </legend>
+                    <div class="flex flex-wrap gap-5">
+                      <label class="inline-flex items-center gap-2 text-[11px] text-slate-600"
+                        ><input type="radio" name="coverage" class="accent-teal-700" />Sí</label
+                      ><label class="inline-flex items-center gap-2 text-[11px] text-slate-600"
+                        ><input type="radio" name="coverage" class="accent-teal-700" />No</label
+                      >
+                    </div>
+                  </fieldset>
+                </fieldset>
+              }
+              @if (step === 3) {
+                <fieldset class="space-y-4 p-5 sm:px-7 sm:py-6">
+                  <legend class="sr-only">Plan y servicios</legend>
+                  <label class="form-label"
+                    >Aseguradora<select class="form-input">
+                      <option>Seleccionar aseguradora</option>
+                      <option>Ambetter</option>
+                      <option>Oscar Health</option>
+                      <option>Florida Blue</option>
+                      <option>Molina Healthcare</option>
+                    </select></label
+                  ><label class="form-label"
+                    >Nivel del plan<select class="form-input">
+                      <option>Seleccionar nivel ACA</option>
+                      <option>Bronze</option>
+                      <option>Silver</option>
+                      <option>Gold</option>
+                      <option>Platinum</option>
+                    </select></label
+                  >
+                  <fieldset>
+                    <legend class="mb-2 text-[11px] font-medium text-slate-700">
+                      Servicios vinculados
+                    </legend>
+                    <div class="grid gap-2 sm:grid-cols-2">
+                      <label
+                        class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
+                        ><input type="checkbox" class="accent-teal-700" />Transporte médico</label
+                      ><label
+                        class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
+                        ><input type="checkbox" class="accent-teal-700" />Coordinación de
+                        cuidados</label
+                      ><label
+                        class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
+                        ><input type="checkbox" class="accent-teal-700" />Entrega de equipo
+                        médico</label
+                      ><label
+                        class="flex items-center gap-2 rounded border border-slate-200 p-3 text-[11px] text-slate-600"
+                        ><input type="checkbox" class="accent-teal-700" />Recordatorios de
+                        citas</label
+                      >
+                    </div>
+                  </fieldset>
+                </fieldset>
+              }
+              <div
+                class="flex items-center justify-between border-t border-slate-100 px-5 py-4 sm:px-7"
+              >
+                <button
+                  type="button"
+                  class="h-9 rounded-md border border-slate-200 px-3 text-xs font-medium text-slate-600 disabled:opacity-40"
+                  [disabled]="step === 1"
+                  (click)="stepChange.emit(-1)"
+                >
+                  Anterior
+                </button>
+                <div class="flex items-center gap-3">
+                  <span class="hidden text-[10px] text-slate-400 sm:block"
+                    >Paso {{ step }} de 3</span
+                  ><button
+                    type="submit"
+                    class="inline-flex h-9 items-center gap-2 rounded-md bg-teal-700 px-4 text-xs font-semibold text-white hover:bg-teal-800"
+                  >
+                    {{ step === 3 ? 'Completar afiliación' : 'Continuar'
+                    }}<svg
+                      viewBox="0 0 20 20"
+                      class="size-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <path d="M4 10h12m-5-5 5 5-5 5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="mt-3 text-center text-[9px] text-slate-400">
+              La información del paciente se gestiona de forma segura y confidencial.
+            </p>
+          </div>
+        </section>

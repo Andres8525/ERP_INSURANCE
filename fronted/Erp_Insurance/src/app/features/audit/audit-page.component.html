@@ -1,0 +1,156 @@
+        <section aria-labelledby="audit-title">
+          <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p class="text-xs font-medium text-slate-500">
+                Control de calidad <span class="mx-1.5 text-slate-300">/</span> Centro de IA
+              </p>
+              <h1
+                id="audit-title"
+                class="mt-1.5 text-[23px] font-semibold tracking-tight text-slate-900"
+              >
+                Auditoría y control de calidad
+              </h1>
+              <p class="mt-1 text-[13px] text-slate-500">
+                Detecta, compara y resuelve inconsistencias en tu cartera.
+              </p>
+            </div>
+            <button
+              class="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-xs font-medium text-slate-700 shadow-sm"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                class="size-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path
+                  d="M4 4v6h6M20 20v-6h-6M5.5 15a7 7 0 0 0 12.8 2M18.5 9A7 7 0 0 0 5.7 7"
+                /></svg
+              >Ejecutar análisis
+            </button>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <article class="rounded-lg border border-rose-200 bg-white p-4">
+              <p class="text-[10px] font-medium text-slate-500">Críticas</p>
+              <p class="mt-2 text-2xl font-semibold tabular-nums text-rose-700">3</p>
+              <p class="mt-1 text-[10px] text-slate-400">Requieren atención inmediata</p>
+            </article>
+            <article class="rounded-lg border border-amber-200 bg-white p-4">
+              <p class="text-[10px] font-medium text-slate-500">Revisión sugerida</p>
+              <p class="mt-2 text-2xl font-semibold tabular-nums text-amber-700">9</p>
+              <p class="mt-1 text-[10px] text-slate-400">Recomendaciones generadas por IA</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-4">
+              <p class="text-[10px] font-medium text-slate-500">Resueltas este mes</p>
+              <p class="mt-2 text-2xl font-semibold tabular-nums text-teal-700">184</p>
+              <p class="mt-1 text-[10px] text-slate-400">96.8% de calidad general</p>
+            </article>
+          </div>
+          <section class="mt-5 overflow-hidden rounded-lg border border-slate-200 bg-white">
+            <div
+              class="flex flex-col gap-3 border-b border-slate-100 p-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"
+            >
+              <div>
+                <h2 class="text-sm font-semibold text-slate-900">Hallazgos detectados</h2>
+                <p class="mt-1 text-[10px] text-slate-500">12 registros requieren una decisión</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  (click)="filterChange.emit('all')"
+                  class="filter-chip rounded border px-2.5 py-1.5 text-[10px] font-medium"
+                  [class.filter-chip-active]="filterSeverity === 'all'"
+                >
+                  Todas</button
+                ><button
+                  (click)="filterChange.emit('critical')"
+                  class="filter-chip rounded border px-2.5 py-1.5 text-[10px] font-medium"
+                  [class.filter-chip-active]="filterSeverity === 'critical'"
+                >
+                  Críticas</button
+                ><button
+                  (click)="filterChange.emit('review')"
+                  class="filter-chip rounded border px-2.5 py-1.5 text-[10px] font-medium"
+                  [class.filter-chip-active]="filterSeverity === 'review'"
+                >
+                  Revisión sugerida
+                </button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-190 text-left">
+                <thead
+                  class="bg-slate-50 text-[10px] font-semibold uppercase tracking-wide text-slate-500"
+                >
+                  <tr>
+                    <th class="px-5 py-3">Asegurado / ID</th>
+                    <th class="px-3 py-3">Tipo de hallazgo</th>
+                    <th class="px-3 py-3">Fuente</th>
+                    <th class="px-3 py-3">Prioridad</th>
+                    <th class="px-3 py-3">Detectado</th>
+                    <th class="px-5 py-3 text-right">Acción</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  @for (anomaly of visibleAnomalies; track anomaly.id) {
+                    <tr class="table-row">
+                      <td class="px-5 py-3.5">
+                        <div class="flex items-center gap-2.5">
+                          <span
+                            class="grid size-8 place-items-center rounded-full bg-slate-100 text-[10px] font-semibold text-slate-600"
+                            >{{ anomaly.initials }}</span
+                          >
+                          <div>
+                            <p class="text-[11px] font-medium text-slate-800">
+                              {{ anomaly.member }}
+                            </p>
+                            <p class="mt-0.5 text-[9px] text-slate-400">{{ anomaly.id }}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-3 py-3.5">
+                        <p class="text-[11px] font-medium text-slate-700">{{ anomaly.issue }}</p>
+                        <p class="mt-0.5 text-[9px] text-slate-400">{{ anomaly.detail }}</p>
+                      </td>
+                      <td class="px-3 py-3.5 text-[10px] text-slate-600">{{ anomaly.source }}</td>
+                      <td class="px-3 py-3.5">
+                        <span
+                          class="inline-flex items-center gap-1.5 rounded px-2 py-1 text-[9px] font-semibold"
+                          [class.badge-critical]="anomaly.severity === 'critical'"
+                          [class.badge-review]="anomaly.severity === 'review'"
+                          ><i
+                            class="size-1.5 rounded-full"
+                            [class.bg-rose-500]="anomaly.severity === 'critical'"
+                            [class.bg-amber-500]="anomaly.severity === 'review'"
+                          ></i
+                          >{{ anomaly.severity === 'critical' ? 'Crítica' : 'Revisión' }}</span
+                        >
+                      </td>
+                      <td class="px-3 py-3.5 text-[10px] text-slate-500">{{ anomaly.date }}</td>
+                      <td class="px-5 py-3.5 text-right">
+                        <button
+                          class="inline-flex h-7 items-center rounded border border-slate-200 px-2.5 text-[10px] font-semibold text-slate-700 hover:border-teal-300 hover:text-teal-700"
+                          (click)="anomalySelected.emit(anomaly)"
+                        >
+                          Comparar registros
+                        </button>
+                      </td>
+                    </tr>
+                  } @empty {
+                    <tr>
+                      <td colspan="6" class="px-5 py-12 text-center text-xs text-slate-500">
+                        No se encontraron hallazgos en esta categoría.
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="flex items-center justify-between border-t border-slate-100 px-5 py-3 text-[10px] text-slate-400"
+            >
+              <span>{{ visibleAnomalies.length }} hallazgos en esta vista</span
+              ><span>Último análisis: hoy, 10:42 AM</span>
+            </div>
+          </section>
+        </section>
